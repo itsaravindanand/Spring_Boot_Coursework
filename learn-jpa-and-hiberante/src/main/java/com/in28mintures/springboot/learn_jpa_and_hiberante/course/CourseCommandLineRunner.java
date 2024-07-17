@@ -22,6 +22,8 @@ public class CourseCommandLineRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        //save, deleteById and findById are database operations available in the Spring JPA.
+        //findByAuthor and findByName are custom database operations created in the CourseSpringDataJpaRepository file
         repository.save(new Course(1, "Learn AWS JPA", "in28minutes"));
         repository.save(new Course(2, "Learn Azure JPA", "in28minutes"));
         repository.save(new Course(3, "Learn DevOps JPA", "in28minutes"));

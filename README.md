@@ -1,3 +1,3 @@
 # Spring_Boot_Courework
 
-All my spring boot works
+Project(s) that demonstrates the implementation of Spring-Boot and related technologies

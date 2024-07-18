@@ -1,6 +1,5 @@
-package com.in28minutes.learn_spring_framework.business_calculation_service;
+package com.in28minutes.learn_spring_framework.examples.a2_business_calculation_service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 //@Component

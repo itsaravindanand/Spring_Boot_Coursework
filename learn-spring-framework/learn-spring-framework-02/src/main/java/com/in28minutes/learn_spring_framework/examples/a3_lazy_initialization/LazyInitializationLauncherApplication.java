@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.lazy_initialization;
+package com.in28minutes.learn_spring_framework.examples.a3_lazy_initialization;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -15,6 +15,7 @@ class ClassA{
 
 @Component
 //Avoid Eager Initialization
+//Without this @Lazy annotation, the ClassB constructor is constructed with Class A auto-wired
 @Lazy
 class ClassB{
     private ClassA classA;
@@ -37,7 +38,7 @@ public class LazyInitializationLauncherApplication {
         try (var context = new AnnotationConfigApplicationContext(LazyInitializationLauncherApplication.class)) {
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
             System.out.println("Initialization of context is completed");
-            context.getBean(ClassB.class).doSomething();
+            //context.getBean(ClassB.class).doSomething();
         }
     }
 }

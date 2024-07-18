@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.jakarata_cdi;
+package com.in28minutes.learn_spring_framework.examples.a6_jakarata_cdi;
 
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 class BusinessService {
     private DataService dataService;
 
-    @Autowired
+    //@Autowired
     //@Inject in Jakarta is similar to @Autowired in spring framework
     @Inject
     public void setDataService(DataService dataService) {

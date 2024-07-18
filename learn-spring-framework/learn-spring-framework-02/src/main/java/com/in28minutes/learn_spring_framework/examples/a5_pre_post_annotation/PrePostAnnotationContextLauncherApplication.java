@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.pre_post_annotation;
+package com.in28minutes.learn_spring_framework.examples.a5_pre_post_annotation;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

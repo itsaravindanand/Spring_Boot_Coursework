@@ -20,6 +20,7 @@ public class GameRunner {
 //    Loosely Coupled using Interface
     private GamingConsole game;
 
+    //Constructor based injection
     //@Qualifier("pacmanGame") -> another way of using qualifier
     public GameRunner(@Qualifier("SuperContraGameQualifier") GamingConsole game) {
         this.game = game;

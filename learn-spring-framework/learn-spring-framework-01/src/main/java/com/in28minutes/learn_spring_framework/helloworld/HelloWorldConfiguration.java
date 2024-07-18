@@ -57,14 +57,16 @@ public class HelloWorldConfiguration {
     }
 
     //Calling existing beans within another bean
+    //Note: for beans with pseudo names, use the actual name while calling the bean directly
     @Bean
     public Person personByBeanMethodCall() {
         return new Person(name(),age(), address());
     }
 
     //passing the beans as parameters
-    //Note: for sudonames of beans, while passing as parameters use sudonames and while calling the method use the method name
     //A way of auto-wiring/injecting the beans
+    //Spring will try to inject the beans of that datatype and
+    //If there are more than one bean of same datatype, it will check for qualifier or primary
     @Bean
     public Person personByParameter(String name, int age, Address address) {//Beans: name, age and address passed as parameters, bean names should match correctly
         return new Person(name,age, address);

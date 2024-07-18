@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.bean_scopes;
+package com.in28minutes.learn_spring_framework.examples.a4_bean_scopes;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

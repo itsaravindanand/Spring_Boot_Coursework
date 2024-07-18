@@ -1,4 +1,4 @@
-package com.in28minutes.learn_spring_framework.examples.xml_config;
+package com.in28minutes.learn_spring_framework.examples.a7_xml_config;
 
 import com.in28minutes.learn_spring_framework.game.GameRunner;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

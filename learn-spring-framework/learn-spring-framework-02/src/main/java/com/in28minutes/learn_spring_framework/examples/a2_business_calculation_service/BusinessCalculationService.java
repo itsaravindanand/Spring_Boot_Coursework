@@ -1,6 +1,5 @@
-package com.in28minutes.learn_spring_framework.business_calculation_service;
+package com.in28minutes.learn_spring_framework.examples.a2_business_calculation_service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -8,7 +7,6 @@ import java.util.Arrays;
 //@Component
 //Since we have the business logic, we can use @Service annotation
 @Service
-
 public class BusinessCalculationService {
 
     //Object created for DataService

@@ -10,6 +10,13 @@ public class CurrencyServiceConfiguration {
     private String username;
     private String key;
 
+    //constructor will throw an error as the CurrencyServiceConfiguration is being constructed using a spring component
+//    public CurrencyServiceConfiguration(String url, String username, String key) {
+//        this.url = url;
+//        this.username = username;
+//        this.key = key;
+//    }
+
     public String getUrl() {
         return url;
     }

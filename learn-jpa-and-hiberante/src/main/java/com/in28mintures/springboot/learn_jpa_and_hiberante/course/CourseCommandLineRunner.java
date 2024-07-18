@@ -1,6 +1,5 @@
 package com.in28mintures.springboot.learn_jpa_and_hiberante.course;
 
-import com.in28mintures.springboot.learn_jpa_and_hiberante.course.jpa.CourseJpaRepository;
 import com.in28mintures.springboot.learn_jpa_and_hiberante.course.spring_data_jpa.CourseSpringDataJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

@@ -5,8 +5,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("name")
 public class LoginController {
     //You can autowire or use Constructor
     //@Autowired
@@ -32,7 +34,7 @@ public class LoginController {
         //If the input matches these values
         if(authenticateService.authenticate(name, password)){
             modelMap.put("name", name);
-            modelMap.put("password", password);
+            //modelMap.put("password", password);
             return "welcome";
         }
         modelMap.put("errorMessage", "Invalid Credentials! Try Again");

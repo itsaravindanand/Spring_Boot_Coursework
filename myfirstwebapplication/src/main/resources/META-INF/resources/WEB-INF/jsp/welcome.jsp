@@ -3,8 +3,10 @@
     <title>Welcome Page</title>
 </head>
 <body>
-    <div>Name: ${name}</div>
-    <div>Password: ${password}</div>
-    <div>Welcome to the Welcome Page!</div>
+    <div class="container">
+        <div>Welcome ${name}</div>
+        <hr>
+        <div><a href="list-todos"> Manage </a> Todos List</div>
+    </div>
 </body>
 </html>

@@ -1,10 +1,13 @@
 package com.in28minutes.springboot.myfirstwebapplication.todo;
 
+import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TodoService {
-    private static List<Todo> todos;
+    private static List<Todo> todos = new ArrayList<>();
 
     static {
         todos.add(new Todo(1, "in28minutes","Get AWS Certified 1",

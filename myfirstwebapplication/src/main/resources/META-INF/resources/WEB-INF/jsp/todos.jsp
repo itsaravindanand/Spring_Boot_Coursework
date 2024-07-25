@@ -5,7 +5,7 @@
     <title>Welcome Home</title>
 </head>
 <body>
-<div>
+<div class = "container">
     <h1>Your Todos</h1>
     <hr>
     <table class="table">

@@ -60,7 +60,6 @@
 			<version>4.0.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>jakarta.servlet.jsp.jstl</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -74,7 +73,6 @@
 			<artifactId>jakarta.el-api</artifactId>
 			<version>5.0.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -91,7 +89,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -100,5 +97,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

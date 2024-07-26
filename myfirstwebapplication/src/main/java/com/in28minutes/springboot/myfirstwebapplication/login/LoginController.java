@@ -26,18 +26,18 @@ public class LoginController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String gotoWelcomeJSP(@RequestParam String name, @RequestParam String password, ModelMap modelMap) {
+    public String gotoWelcomeJSP(@RequestParam String name, @RequestParam String password, ModelMap model) {
 
         //Authentication
         //name: aravind
         //password: password
         //If the input matches these values
         if(authenticateService.authenticate(name, password)){
-            modelMap.put("name", name);
-            //modelMap.put("password", password);
+            model.put("name", name);
+            //model.put("password", password);
             return "welcome";
         }
-        modelMap.put("errorMessage", "Invalid Credentials! Try Again");
+        model.put("errorMessage", "Invalid Credentials! Try Again");
         return "login";
 
     }

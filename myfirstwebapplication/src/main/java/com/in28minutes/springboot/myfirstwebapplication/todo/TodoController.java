@@ -1,6 +1,8 @@
 package com.in28minutes.springboot.myfirstwebapplication.todo;
 
 import jakarta.validation.Valid;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -23,25 +25,26 @@ public class TodoController {
 
     @RequestMapping("list-todos")
     public String listAllTodos(ModelMap modelMap) {
-        List<Todo> todos = todoservice.findByUsername("in28minutes");
+        String username = getLoggedinUsername();
+        List<Todo> todos = todoservice.findByUsername(username);
         modelMap.addAttribute("todos", todos);
         return "listTodos";
     }
 
     @RequestMapping(value = "add-todo", method = RequestMethod.GET)
     public String showNewTodoPage(ModelMap model) {
-        String username = (String) model.get("name");
+        String username = getLoggedinUsername();
         Todo todo = new Todo(0, username, "", LocalDate.now(), false);
         model.put("todo", todo);
         return "todo";
     }
 
     @RequestMapping(value = "add-todo", method = RequestMethod.POST)
-    public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+    public String addNewTodo(@Valid Todo todo, BindingResult result) {
         if(result.hasErrors()){
             return "todo";
         }
-        String username = (String) model.get("name");
+        String username = getLoggedinUsername();
         todoservice.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
         return "redirect:list-todos";
     }
@@ -62,13 +65,18 @@ public class TodoController {
     }
 
     @RequestMapping(value = "update-todo", method = RequestMethod.POST)
-    public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
+    public String updateTodo(@Valid Todo todo, BindingResult result) {
         if(result.hasErrors()){
             return "todo";
         }
-        String username = (String) model.get("name");
+        String username = getLoggedinUsername();
         todo.setUsername(username);
         todoservice.updateTodo(todo);
         return "redirect:list-todos";
+    }
+
+    private static String getLoggedinUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
     }
 }

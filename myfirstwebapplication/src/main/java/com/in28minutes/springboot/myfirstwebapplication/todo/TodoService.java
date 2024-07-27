@@ -15,17 +15,22 @@ public class TodoService {
     private static int todosCount = 0;
 
     static {
-        todos.add(new Todo(++todosCount, "in28minutes", "Get AWS Certified 1",
+        todos.add(new Todo(++todosCount, "aravind", "Get AWS Certified 1",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(++todosCount, "in28minutes", "Learn DevOps 1",
+        todos.add(new Todo(++todosCount, "aravind", "Learn DevOps 1",
                 LocalDate.now().plusYears(2), false));
-        todos.add(new Todo(++todosCount, "in28minutes", "Learn Full Stack Development 1",
+        todos.add(new Todo(++todosCount, "aravind", "Learn Full Stack Development 1",
                 LocalDate.now().plusYears(3), false));
     }
 
     //return todos list as a List
+    //the username check should use .equals since Strings are compared
+    //the lambda expression will pull the records matching the username
+    //then we are returning it as a list by converting it to a stream
     public List<Todo> findByUsername(String username) {
-        return todos;
+        Predicate<? super Todo> predicate =
+                todo -> todo.getUsername().equalsIgnoreCase(username);
+        return todos.stream().filter(predicate).toList();
     }
 
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {

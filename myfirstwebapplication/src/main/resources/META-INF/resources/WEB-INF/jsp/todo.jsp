@@ -31,6 +31,7 @@
         <div><input type="submit" class="btn btn-success"/></div>
     </form:form>
 </div>
+<%@ include file="common/footer.jspf"%>
 <script src="webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript">
     var today = new Date();
@@ -39,4 +40,4 @@
         startDate: today
     });
 </script>
-<%@ include file="common/footer.jspf"%>
+

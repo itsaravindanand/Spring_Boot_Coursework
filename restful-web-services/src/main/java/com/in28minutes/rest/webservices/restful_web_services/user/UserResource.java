@@ -1,5 +1,6 @@
 package com.in28minutes.rest.webservices.restful_web_services.user;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -36,7 +37,7 @@ class UserResource {
     //Create new User
     //POST /users
     @PostMapping(path = "/users")
-    public ResponseEntity<Object> createUser(@RequestBody User user){
+    public ResponseEntity<Object> createUser(@Valid @RequestBody User user){
         User savedUser = userDAOService.save(user);
         //Returning the location of created user
         // /users/4 -> /users/{id}, user.getID()
@@ -47,5 +48,12 @@ class UserResource {
                 .buildAndExpand(savedUser.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    //Delete a user
+    //DELETE /users/{id}
+    @DeleteMapping(path = "/users/{userId}")
+    public void deleteUser(@PathVariable Integer userId){
+       userDAOService.DeleteById(userId);
     }
 }

@@ -8,7 +8,7 @@ public class OptionalClass {
     public static void main(String[] args) {
         //Providing a safeguard for null fields
         //When you declare a String/any object as Optional, when it is used in other class, it would make the coder to check null values
-        //The error for accessing a Optional Object which is null is java.util.NoSuchElementException: No value present
+        //The error for accessing an Optional Object which is null is java.util.NoSuchElementException: No value present
         List<String> fruits = List.of("apple", "banana", "mango", "blackberry");
         //predicate lambda statement
         Predicate<? super String> predicate = fruit -> fruit.startsWith("b");
@@ -26,7 +26,7 @@ public class OptionalClass {
         System.out.println(optional1.isEmpty());
         System.out.println(optional1.isPresent());
         //This throws an exception: java.util.NoSuchElementException: No value present
-        System.out.println(optional1.get());
+        //System.out.println(optional1.get());
 
         //Direct Optional creation
         Optional<String> fruit = Optional.of("Jack Fruit");

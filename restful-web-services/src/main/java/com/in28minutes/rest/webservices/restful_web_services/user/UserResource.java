@@ -63,6 +63,6 @@ class UserResource {
     //DELETE /users/{id}
     @DeleteMapping(path = "/users/{userId}")
     public void deleteUser(@PathVariable Integer userId){
-       userDAOService.DeleteById(userId);
+       userDAOService.deleteById(userId);
     }
 }

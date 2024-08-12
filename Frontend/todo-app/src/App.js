@@ -1,13 +1,38 @@
 import "./App.css";
-import LearningComponent from "./components/learning-examples/LearningComponent";
-
+import Counter from "./components/learning-examples/Counter/Counter";
 
 function App() {
   return (
-    <div className="App">
-      My Todo Application Updated
-      <LearningComponent/>
+    <div className="App">     
+     <div className="counterText">
+     Counter Application
+     </div>
+     {/* <PlayingWithProps property1="value1" property2="value2"/> */}
+     <Counter/>
     </div>
   )
 }
+
+// //{property1:'value1', property2:'value2'}
+// function PlayingWithProps(properties){
+//   console.log(properties)
+//   console.log(properties.property1)
+//   console.log(properties.property2)
+//   return (
+//     <div>
+//       Props
+//     </div>
+//   )
+// }
+//{property1:'value1', property2:'value2'}
+
+// function PlayingWithProps({property1,property2}){
+//   console.log(property1)
+//   console.log(property2)
+//   return (
+//     <div>
+//       Props
+//     </div>
+//   )
+// }
 export default App;

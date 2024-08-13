@@ -7,6 +7,7 @@ export default function Counter() {
     const [count, setCount] = useState(0);
 
     function incrementCounterParentFunction(by) {
+        //calling the function and updating the current state value
         setCount(count + by)
     }
 

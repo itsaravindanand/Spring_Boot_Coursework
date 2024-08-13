@@ -1,18 +1,19 @@
 import "./App.css";
-import Counter from "./components/learning-examples/Counter/Counter";
+import TodoApp from "./components/todo/TodoApp";
 
 function App() {
   return (
-    <div className="App">     
-     <div className="counterText">
+    <div className="App"> 
+    <TodoApp></TodoApp>
+        
+     {/* <div className="counterText">
      Counter Application
-     </div>
+     </div> */}
      {/* <PlayingWithProps property1="value1" property2="value2"/> */}
-     <Counter/>
+     {/* <Counter/> */}
     </div>
   )
 }
-
 // //{property1:'value1', property2:'value2'}
 // function PlayingWithProps(properties){
 //   console.log(properties)
@@ -25,7 +26,7 @@ function App() {
 //   )
 // }
 
-//{property1:'value1', property2:'value2'}
+// //{property1:'value1', property2:'value2'}
 // function PlayingWithProps({property1,property2}){
 //   console.log(property1)
 //   console.log(property2)

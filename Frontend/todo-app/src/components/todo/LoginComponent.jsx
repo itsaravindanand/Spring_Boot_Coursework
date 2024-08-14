@@ -28,14 +28,12 @@ function LoginComponent() {
     function handleSubmit() {
         // console.log(username)
         // console.log(password)
-        if (username === "aravind" && password === "password") {
+        if (authContext.login(username, password)) {
             //console.log("success")
-            authContext.setAuthenticated(true)
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
             navigate(`/welcome/${username}`)
         } else {
-            authContext.setAuthenticated(false)
             setShowErrorMessage(true)
             setShowSuccessMessage(false)
             //console.log("failed")

@@ -19,9 +19,21 @@ export default function AuthProvider({children}){
 
     //simple object creation in JS
     //const valueToBeShared = {number, isAuthenticated, setAuthenticated}   
+    function login(username, password){
+        if(username==='aravind' && password==='password'){
+            setAuthenticated(true)
+            return true            
+        } else {
+            setAuthenticated(false)
+            return false
+        }      
+    }
+    function logout() {
+        setAuthenticated(false)
+    }
 
     return(
-        <AuthContext.Provider value={ {number, isAuthenticated, setAuthenticated} }>
+        <AuthContext.Provider value={ {number, isAuthenticated, login, logout} }>
         {children}
         </AuthContext.Provider>
     )

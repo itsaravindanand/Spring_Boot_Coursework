@@ -6,44 +6,33 @@ function LoginComponent() {
 
     const [username, setUsername] = useState("aravind")
     const [password, setPassword] = useState('')
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const [showErrorMessage, setShowErrorMessage] = useState(false)
     const navigate = useNavigate();
     const authContext = useAuth()
 
 
     function handleUsernameChange(event) {
-        //console.log(event.target.value)
         //setting the value from the event to the username 
         setUsername(event.target.value)
     }
 
     function handlePasswordChange(event) {
-        //console.log(event.target.value)
         //setting the value from the event to the password
         setPassword(event.target.value)
 
     }
 
     function handleSubmit() {
-        // console.log(username)
-        // console.log(password)
         if (authContext.login(username, password)) {
-            //console.log("success")
-            setShowSuccessMessage(true)
-            setShowErrorMessage(false)
             navigate(`/welcome/${username}`)
         } else {
             setShowErrorMessage(true)
-            setShowSuccessMessage(false)
-            //console.log("failed")
         }
     }
     return (
         <div className="Login">
             <div className="LoginForm">
                 <h1>Time to Login!</h1>
-                {showSuccessMessage && <div className="successMessage">Authenticated Successfully</div>}
                 {showErrorMessage && <div className="errorMessage">Authentication Failed. Check Creds!.</div>}
                 <div>
                     <label>Username</label>

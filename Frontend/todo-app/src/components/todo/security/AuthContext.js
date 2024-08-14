@@ -8,17 +8,11 @@ export const useAuth = () => useContext(AuthContext)
 
 //2: share the created context with other component
 
-export default function AuthProvider({children}){    
-    //put some state in the context
-    const [number, setNumber] = useState(10)
+export default function AuthProvider({children}){ 
 
     //check if user is authenticated or not
     const [isAuthenticated, setAuthenticated] = useState(false)
-
-    //setInterval( () => setNumber(number+1), 10000)
-
-    //simple object creation in JS
-    //const valueToBeShared = {number, isAuthenticated, setAuthenticated}   
+    //function to check the login creds
     function login(username, password){
         if(username==='aravind' && password==='password'){
             setAuthenticated(true)
@@ -28,12 +22,13 @@ export default function AuthProvider({children}){
             return false
         }      
     }
+    //function for onClick logout for header
     function logout() {
         setAuthenticated(false)
     }
 
     return(
-        <AuthContext.Provider value={ {number, isAuthenticated, login, logout} }>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout} }>
         {children}
         </AuthContext.Provider>
     )

@@ -5,7 +5,7 @@ import HeaderComponent from './HeaderComponent'
 import ListTodosComponent from './ListTodosComponent'
 import WelcomeComponent from './WelcomeComponent'
 import LoginComponent from './LoginComponent'
-// import './TodoApp.css'
+import './TodoApp.css'
 
 export default function TodoApp() {
     return (

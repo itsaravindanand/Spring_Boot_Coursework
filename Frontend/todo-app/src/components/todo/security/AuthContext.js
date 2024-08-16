@@ -9,26 +9,31 @@ export const useAuth = () => useContext(AuthContext)
 //2: share the created context with other component
 
 export default function AuthProvider({children}){ 
-
     //check if user is authenticated or not
     const [isAuthenticated, setAuthenticated] = useState(false)
+
+    const [username, setUsername] = useState(null)
+
     //function to check the login creds
     function login(username, password){
         if(username==='aravind' && password==='password'){
             setAuthenticated(true)
+            setUsername(username)
             return true            
         } else {
             setAuthenticated(false)
+            setUsername(null)
             return false
         }      
     }
+    
     //function for onClick logout for header
     function logout() {
         setAuthenticated(false)
     }
 
     return(
-        <AuthContext.Provider value={{ isAuthenticated, login, logout} }>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, username} }>
         {children}
         </AuthContext.Provider>
     )

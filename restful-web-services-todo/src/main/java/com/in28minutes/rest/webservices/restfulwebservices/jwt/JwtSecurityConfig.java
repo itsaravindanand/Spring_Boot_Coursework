@@ -50,7 +50,7 @@ public class JwtSecurityConfig {
         return httpSecurity
                 .authorizeHttpRequests(auth -> auth
                         .antMatchers("/authenticate").permitAll() // Use antMatchers for specific paths
-//                        .requestMatchers(PathRequest.toH2Console()).permitAll() // For H2 console
+                        .requestMatchers(PathRequest.toH2Console()).permitAll() // For H2 console
                         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll() // OPTIONS requests
                         .anyRequest().authenticated()) // All other requests
                 .csrf(AbstractHttpConfigurer::disable)

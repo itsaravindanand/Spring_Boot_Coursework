@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
-
 import { apiClient } from "../api/ApiClient";
-import { executeBasicAuthenticationService } from "../api/AuthenticationApiService";
+import { executeJwtAuthenticationService } from "../api/AuthenticationApiService";
 
 //1: create a context using createContext hook
 export const AuthContext = createContext()
@@ -22,18 +21,21 @@ export default function AuthProvider({children}){
     //function to check the login creds
     async function login(username, password){
 
-        const baToken = 'Basic ' + window.btoa( username + ":" + password )
         try{
-            const response = await executeBasicAuthenticationService(baToken)
-
+            const response = await executeJwtAuthenticationService(username, password)
+            console.log(response)
             if(response.status==200){
+                
+                const jwtToken = 'Bearer ' + response.data.token
+                
                 setAuthenticated(true)
                 setUsername(username)
-                setToken(baToken)
+                setToken(jwtToken)
+
                 apiClient.interceptors.request.use(
                     (config) => {
                         console.log('intercepting and adding a token')
-                        config.headers.Authorization = baToken
+                        config.headers.Authorization = jwtToken
                         return config
                     }
                 )

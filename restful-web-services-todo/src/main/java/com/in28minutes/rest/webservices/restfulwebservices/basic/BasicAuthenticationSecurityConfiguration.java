@@ -23,8 +23,8 @@ public class BasicAuthenticationSecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()  // Permits all OPTIONS requests
-                        .anyRequest().authenticated())  // Authenticates all other requests
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()  // Permits all OPTIONS requests
+                .anyRequest().authenticated())  // Authenticates all other requests
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf().disable()

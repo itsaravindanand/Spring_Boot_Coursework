@@ -24,6 +24,7 @@
 hs_err_pid*
 replay_pid*
 =======
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -57,4 +58,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node.js ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 >>>>>>> master

@@ -24,10 +24,9 @@ The repository includes programs demonstrating the following topics:
 - **Gradle**
 - **Maven**
 - **OAuth**
-- **AWS Cloud Services**
 - **Docker**
 - **Kubernetes**
-
+- **AWS Cloud Services**
 ---
 
 ## Getting Started

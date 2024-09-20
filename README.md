@@ -24,9 +24,7 @@ The repository includes programs demonstrating the following topics:
 - **Gradle**
 - **Maven**
 - **OAuth**
-- **AWS Deployment**
-  - AWS Cloud Services
-  - AWS Elastic Beanstalk and AWS S3
+- **AWS Cloud Services**
 - **Docker**
 - **Kubernetes**
 
@@ -35,6 +33,4 @@ The repository includes programs demonstrating the following topics:
 ## Getting Started
 
 To get started with any of the programs, clone the repository and navigate to the desired folder:
-
-```bash
-git clone https://github.com/yourusername/Spring_Boot_Coursework.git
+\

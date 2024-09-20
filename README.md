@@ -31,5 +31,4 @@ The repository includes programs demonstrating the following topics:
 
 ## Getting Started
 
-To get started with any of the programs, clone the repository and navigate to the desired folder:
-\
+To get started with any of the programs, clone the repository and navigate to the desired folder!
